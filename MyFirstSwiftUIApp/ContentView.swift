@@ -31,18 +31,17 @@ struct ContentView: View {
                         Image(data.imageName)
                             .resizable().frame(width: 100, height: 100, alignment: .center)
                             .aspectRatio(contentMode: .fill)
+                            .cornerRadius(10)
+                        
                         Text(data.title)
                             .foregroundColor(.green)
                             .padding()
                             .font(.system(size: 20, weight: .bold, design: .default))
                     }
                 }
-                
             }
             .navigationBarTitle("Fruits")
-            
         }
-  
     }
 }
 
@@ -53,14 +52,12 @@ struct DataView: View {
     var body: some View {
         VStack {
             Image(data.imageName)
-                .resizable().frame(width: 400, height: 360, alignment: .center)
-                .aspectRatio(contentMode: .fill)
+                .resizable().frame(width: 300, height: 280, alignment: .center)
+                .aspectRatio(contentMode: .fit)
             Text(data.imageDescription)
             Spacer()
             Text(data.imageTakenDate)
                 .padding(5)
-            
-        
         }
         .navigationBarTitle(data.title)
     }
@@ -132,7 +129,6 @@ struct ContentView_Previews: PreviewProvider {
                  imageDescription: "This is a watermelon.",
                  imageTakenDate: "1/1/2018"),
 
-        
         ])
             .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro"))
     }
